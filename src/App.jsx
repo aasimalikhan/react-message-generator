@@ -10,6 +10,7 @@ export default function ReferralMessageGenerator() {
   const [company, setCompany] = useState("f5 networks");
   const [jobRole, setJobRole] = useState("Engineer II - Software");
   const [resumeLink, setResumeLink] = useState("https://drive.google.com/file/d/1TAPfcS7dzi6FrPUwI6ODutWWbdUuubnv/view?usp=sharing");
+  const [jobLink, setJobLink] = useState("https://ffive.wd5.myworkdayjobs.com/f5jobs/job/Hyderabad/Engineer-II-Software_RP1031601-1/apply?source=LinkedIn");
   const [urls, setUrls] = useState({
     leetcode: "https://leetcode.com/u/snorlax1/",
     github: "https://github.com/aasimalikhan",
@@ -41,7 +42,7 @@ export default function ReferralMessageGenerator() {
 I hope you are doing well.
 Could you please give me a referral for the ${jobRole} role at ${company}?
 I think I am a great fit for this role.
-The Job ID is ${jobId}. Here’s the job link for your reference: https://ffive.wd5.myworkdayjobs.com/f5jobs/job/Hyderabad/${jobRole.replace(/ /g, "-")}_${jobId}-1/apply?source=LinkedIn
+The Job ID is ${jobId}. Here’s the job link for your reference: ${jobLink}
 
 This referral would greatly help me speed up the interview process.
 About me:
@@ -106,6 +107,17 @@ ${links.join('\n')}
               value={jobId}
               onChange={(e) => setJobId(e.target.value)}
               placeholder="Enter job ID"
+              className="mt-2"
+            />
+          </div>
+
+          <div>
+            <Label htmlFor="jobLink">Job Link</Label>
+            <Input
+              id="jobLink"
+              value={jobLink}
+              onChange={(e) => setJobLink(e.target.value)}
+              placeholder="Enter custom job link"
               className="mt-2"
             />
           </div>
