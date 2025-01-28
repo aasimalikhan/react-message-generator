@@ -10,5 +10,13 @@ export default defineConfig({
     }
   },
   plugins: [react(), tailwindcss()],
+  build: {
+    outDir: 'src/dist',  // This will place the build files inside the `src/dist` folder
+    rollupOptions: {
+      input: {
+        main: 'index.html', // Specify the main HTML file
+      },
+    },
+  },
 })
 
